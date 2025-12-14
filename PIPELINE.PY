@@ -9,7 +9,7 @@ INPUT_FILE = 'yellow_tripdata_2025-01.parquet'
 DB_URL = 'postgresql://user:password@localhost:5432/taxidata'
 
 def run_pipeline():
-    print("🚀 Starting ETL Pipeline...")
+    print("Starting ETL Pipeline...")
     
     # 1. EXTRACT & TRANSFORM (using DuckDB)
     # We use DuckDB to aggregate millions of rows in seconds.
@@ -41,7 +41,7 @@ def run_pipeline():
     # 'replace' drops the table if it exists and creates a new one
     metrics_df.to_sql(name='location_metrics', con=engine, if_exists='replace', index=False)
     
-    print("✅ Pipeline Finished! Data is live in the DB.")
+    print("Pipeline Finished! Data is live in the DB.")
 
 if __name__ == "__main__":
     run_pipeline()
