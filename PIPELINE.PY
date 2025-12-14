@@ -2,6 +2,8 @@ import duckdb
 import pandas as pd
 from sqlalchemy import create_engine
 import time
+#venv\Scripts\activate
+#pip install -r requirements.txt
 
 # --- CONFIGURATION ---
 INPUT_FILE = 'yellow_tripdata_2025-01.parquet'
