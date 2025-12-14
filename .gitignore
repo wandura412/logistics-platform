@@ -1,0 +1,18 @@
+# created by virtualenv automatically
+# Ignore the virtual environment
+venv/
+.env
+
+# Ignore compiled python files
+__pycache__/
+*.pyc
+
+# Ignore Data files (Users should download these themselves)
+*.parquet
+*.csv
+
+# Ignore local database files? (Optional: keep if you want to share the DB)
+# *.db
+
+# Ignore Mac system files
+.DS_Store
