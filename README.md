@@ -1,4 +1,4 @@
-# 🚕 End-to-End AI Logistics Platform
+# End-to-End AI Logistics Platform
 
 A full-stack data engineering and AI project that processes NYC Taxi data, serves analytics via a high-performance API, and includes a **Local RAG (Retrieval-Augmented Generation) AI Agent** to answer natural language questions about the data.
 
@@ -9,7 +9,7 @@ A full-stack data engineering and AI project that processes NYC Taxi data, serve
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 
 
@@ -21,7 +21,7 @@ The system consists of three distinct micro-components:
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Language:** Python 3.10+
 * **Data Processing:** DuckDB, Pandas, SQLAlchemy
@@ -32,7 +32,7 @@ The system consists of three distinct micro-components:
 
 ---
 
-## 🚀 Setup & Installation
+##  Setup & Installation
 
 ### Prerequisites
 * Python 3.10+
