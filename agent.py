@@ -60,24 +60,31 @@ class LocalAgent:
         k = 3
         distances, indices = self.index.search(np.array(q_embed), k)
         
-        # 3. Retrieve the actual text of those data points
+        # 3. Retrieve the actual text
         context_lines = [self.documents[i] for i in indices[0]]
         context_block = "\n".join(context_lines)
         
-        # 4. Construct the prompt for Ollama
+        # --- DEBUG PRINT (Add this!) ---
+        print("\n" + "="*30)
+        print(f"🧐 AI FOUND THESE CLUES:")
+        print(context_block)
+        print("="*30 + "\n")
+        # -------------------------------
+        
+        # 4. Construct the prompt
+        # We will make the prompt SIMPLER for the small model
         prompt = f"""
-        You are a Data Analyst assistant. Use the following REAL data to answer the question.
-        If the answer is not in the data, say "I don't know".
-        
-        DATA CONTEXT:
+        Context information is below.
+        ---------------------
         {context_block}
-        
-        QUESTION: 
-        {user_question}
+        ---------------------
+        Given the context information and not prior knowledge, answer the query.
+        Query: {user_question}
+        Answer:
         """
         
         # 5. Send to Ollama
-        print(">>> 🤔 Thinking (Sending to Ollama)...")
+        print(">>> 🤔 Thinking...")
         response = ollama.chat(model=MODEL_NAME, messages=[
             {'role': 'user', 'content': prompt},
         ])
