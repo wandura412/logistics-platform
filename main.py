@@ -16,18 +16,18 @@ ai_agent = None
 async def lifespan(app: FastAPI):
     # Startup: Load the AI
     global ai_agent
-    print(">>> 🚀 STARTUP: Loading AI Agent...")
+    print(">>>  STARTUP: Loading AI Agent...")
     try:
         ai_agent = LocalAgent()
         ai_agent.load_data()
-        print(">>> ✅ AI Agent Loaded and Ready!")
+        print(">>>  AI Agent Loaded and Ready!")
     except Exception as e:
-        print(f">>> ⚠️ Warning: AI Agent failed to load. Chat will be unavailable. Error: {e}")
+        print(f">>>  Warning: AI Agent failed to load. Chat will be unavailable. Error: {e}")
     
     yield
     
     # Shutdown: Clean up (if needed)
-    print(">>> 🛑 SHUTDOWN: API stopping...")
+    print(">>>  SHUTDOWN: API stopping...")
 
 # --- CONFIGURATION ---
 app = FastAPI(

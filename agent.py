@@ -50,7 +50,7 @@ class LocalAgent:
         dimension = embeddings.shape[1]
         self.index = faiss.IndexFlatL2(dimension)
         self.index.add(np.array(embeddings))
-        print(">>> ✅ Knowledge Base Built!")
+        print(">>>  Knowledge Base Built!")
 
     def query(self, user_question):
         # 1. Embed the user's question
@@ -66,7 +66,7 @@ class LocalAgent:
         
         # --- DEBUG PRINT (Add this!) ---
         print("\n" + "="*30)
-        print(f"🧐 AI FOUND THESE CLUES:")
+        print(f" AI FOUND THESE CLUES:")
         print(context_block)
         print("="*30 + "\n")
         # -------------------------------
@@ -84,7 +84,7 @@ class LocalAgent:
         """
         
         # 5. Send to Ollama
-        print(">>> 🤔 Thinking...")
+        print(">>>  Thinking...")
         response = ollama.chat(model=MODEL_NAME, messages=[
             {'role': 'user', 'content': prompt},
         ])
@@ -96,7 +96,7 @@ def main():
     agent.load_data()
     
     print("\n" + "="*40)
-    print(f"   🤖 PURE PYTHON AGENT ({MODEL_NAME})")
+    print(f"    PURE PYTHON AGENT ({MODEL_NAME})")
     print("="*40)
     
     while True:
@@ -108,7 +108,7 @@ def main():
             answer = agent.query(q)
             print(f"Agent: {answer}")
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f" Error: {e}")
             print("Make sure the Ollama app is running!")
 
 if __name__ == "__main__":
