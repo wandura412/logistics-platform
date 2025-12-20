@@ -9,7 +9,11 @@ A full-stack data engineering and AI project that processes NYC Taxi data, serve
 
 ---
 
+<<<<<<< HEAD
 ##  Architecture
+=======
+## Architecture
+>>>>>>> fcc689f1377aae3ecf4277684414ff9f35fe8db5
 
 
 
